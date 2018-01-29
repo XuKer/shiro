@@ -25,13 +25,14 @@ public class MyRealm1 implements Realm {
 		// TODO Auto-generated method stubnull
 		String username=(String) token.getPrincipal();
 		String password=new String((char[])token.getCredentials());
-		if(!"zhang2".equals(username)){
+		if(!"zhang".equals(username)){
 			throw new UnknownAccountException();
 			//用户名错误
 		}
-		if(!"1234".equals(password)){
+		if(!"123".equals(password)){
 			throw new IncorrectCredentialsException();
 		}
+		System.out.println("第一个realm验证成功 ");
 		return new SimpleAuthenticationInfo(username, password, getName());
 	}
 
